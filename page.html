@@ -2,6 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
     <title>Just Stream It</title>
 </head>
 <body>
@@ -10,16 +12,16 @@
             <div id="titre_principal">
                 <div id="logo">
                     <img src="images/logo.png" alt="logo de Just Stream It">
-                    <h1>Just Stream It</h1>
                 </div>
                 <nav>
-                    <ul>
-                        <li>Accueil</li>
-                        <li>Catégories</li>
+                    <ul class="menu">
+                        <li class="menu">Accueil</li>
+                        <li class="menu">Catégories</li>
                     </ul>
                 </nav>
             </div>
         </header>
+
         <main>
             <section id="meilleur_film">
                 <h3>Titre du film</h3>
@@ -27,10 +29,20 @@
                 <p>Résumé du film</p>
                 <img src="photo du film" alt="photo du film">
             </section>
+
             <section id="films_les_mieux_notés">
                 <h2>Films les mieux notés</h2>
-                <!--faire un tableau des 7 films dans une case trop petite pour faire un défilement -->
+                <ul class="mieux_notés">
+                    <li class="mieux_notés">Film 1</li>
+                    <li class="mieux_notés">Film 2</li>
+                    <li class="mieux_notés">Film 3</li>
+                    <li class="mieux_notés">Film 4</li>
+                    <li class="mieux_notés">Film 5</li>
+                    <li class="mieux_notés">Film 6</li>
+                    <li class="mieux_notés">Film 7</li>
+                </ul>
             </section>
+
         </main>
     </div>
 </body>
