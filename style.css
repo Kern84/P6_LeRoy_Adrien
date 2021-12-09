@@ -1,0 +1,50 @@
+#bloc_page
+{
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+}
+#titre_principal
+{
+    display: flex;
+    border: 1px solid red;
+}
+nav
+{
+    position: relative;
+}
+nav ul
+{
+    list-style-type: none;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+}
+.menu
+{
+    padding: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+section
+{
+        height: 150px;
+        margin: 50px;
+}
+#meilleur_film
+{
+    border: 1px solid blue;
+}
+#films_les_mieux_notés
+{
+    text-align: center;
+    overflow: auto;
+    border: 1px solid green;
+}
+.mieux_notés
+{
+    border: 1px solid black;
+    margin: 2px;
+    list-style-type: none;
+    display: flex;
+}
