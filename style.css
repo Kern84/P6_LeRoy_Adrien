@@ -31,10 +31,24 @@ section
         height: 150px;
         margin: 50px;
 }
+
+
 #meilleur_film
 {
+    height: 300px;
     border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
 }
+#meilleur_film_option
+{
+    border: 1px solid red;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-between;
+}
+
+
 #films_les_mieux_notés
 {
     text-align: center;

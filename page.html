@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+
     <title>Just Stream It</title>
 </head>
 <body>
@@ -21,15 +21,16 @@
                 </nav>
             </div>
         </header>
-
         <main>
             <section id="meilleur_film">
-                <h3>Titre du film</h3>
-                <a href="lien vers le film"><input type="button" value="Lire le film"></a>
-                <p>Résumé du film</p>
-                <img src="photo du film" alt="photo du film">
+                <div id="meilleur_film_option">
+                    <h3 id="titre_meilleur_film">Titre du film</h3>
+                    <p id="résumé_meilleur_film">Résumé du film</p>
+                    <a href="lien vers le film"><input type="button" value="Lire le film"></a>
+                </div>
+                <img id="image_meilleur_film" src="" alt="photo du film">
+                <script type="text/javascript" src="script.js"></script>
             </section>
-
             <section id="films_les_mieux_notés">
                 <h2>Films les mieux notés</h2>
                 <ul class="mieux_notés">
@@ -42,7 +43,6 @@
                     <li class="mieux_notés">Film 7</li>
                 </ul>
             </section>
-
         </main>
     </div>
 </body>
