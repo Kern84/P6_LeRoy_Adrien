@@ -13,3 +13,5 @@ fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&sort_by=-votes")
 fetch("http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&sort_by=-votes")
         .then(response => response.json())
         .then(data => resume.textContent = data["results"][0]["description"]);
+
+

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-
+    <script type="text/javascript" src="script.js" async></script>
+    <script type="text/javascript" src="carousel.js" async></script>
     <title>Just Stream It</title>
 </head>
 <body>
@@ -29,20 +30,25 @@
                     <a href="lien vers le film"><input type="button" value="Lire le film"></a>
                 </div>
                 <img id="image_meilleur_film" src="" alt="photo du film">
-                <script type="text/javascript" src="script.js"></script>
             </section>
+
             <section id="films_les_mieux_notés">
-                <h2>Films les mieux notés</h2>
-                <ul class="mieux_notés">
-                    <li class="mieux_notés">Film 1</li>
-                    <li class="mieux_notés">Film 2</li>
-                    <li class="mieux_notés">Film 3</li>
-                    <li class="mieux_notés">Film 4</li>
-                    <li class="mieux_notés">Film 5</li>
-                    <li class="mieux_notés">Film 6</li>
-                    <li class="mieux_notés">Film 7</li>
-                </ul>
+                <div class="container">
+                    <h2>Films les mieux notés</h2>
+                    <div class="carousel">
+                        <div class="carousel_container">
+                            <div class="carousel_item">Film 1</div>
+                            <div class="carousel_item">Film 2</div>
+                            <div class="carousel_item">Film 3</div>
+                            <div class="carousel_item">Film 4</div>
+                            <div class="carousel_item">Film 5</div>
+                            <div class="carousel_item">Film 6</div>
+                            <div class="carousel_item">Film 7</div>
+                        </div>
+                    </div>
+                </div>
             </section>
+
         </main>
     </div>
 </body>

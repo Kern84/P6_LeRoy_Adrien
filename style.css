@@ -1,47 +1,39 @@
-#bloc_page
-{
+#bloc_page {
     border: 1px solid black;
     width: 50%;
     margin: auto;
 }
-#titre_principal
-{
+#titre_principal {
     display: flex;
     border: 1px solid red;
 }
-nav
-{
+nav {
     position: relative;
 }
-nav ul
-{
+nav ul {
     list-style-type: none;
     display: flex;
     position: absolute;
     bottom: 0;
 }
-.menu
-{
+.menu {
     padding: 20px;
     font-weight: bold;
     text-transform: uppercase;
 }
-section
-{
+section {
         height: 150px;
         margin: 50px;
 }
 
 
-#meilleur_film
-{
+#meilleur_film {
     height: 300px;
     border: 1px solid blue;
     display: flex;
     justify-content: space-between;
 }
-#meilleur_film_option
-{
+#meilleur_film_option {
     border: 1px solid red;
     flex-direction: column;
     padding: 50px;
@@ -49,16 +41,53 @@ section
 }
 
 
-#films_les_mieux_notés
-{
+#films_les_mieux_notés {
     text-align: center;
     overflow: auto;
     border: 1px solid green;
 }
-.mieux_notés
-{
+.mieux_notés {
     border: 1px solid black;
     margin: 2px;
-    list-style-type: none;
     display: flex;
+}
+
+
+.carousel {
+    position: relative;
+}
+.carousel_container {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+}
+.carousel_container::after {
+    content:'';
+    clear: both;
+    display: table;
+}
+.carousel_item {
+    float: left;
+}
+.carousel_next, .carousel_prev {
+    width: 40px;
+    height, 40px;
+    background: #FFF url(right.png) center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20%;
+    right: -20px;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.carousel_next:hover, .carousel_prev:hover {
+    transform: scale(1.2)
+}
+.carousel_prev{
+    background-image: url(left.png);
+    right: auto;
+    left: -20px;
+}
+.carousel_next-hidden, .carousel_prev-hidden {
+    opacity: O;
 }
