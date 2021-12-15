@@ -1,11 +1,29 @@
+/* Mise en page générale */
 #bloc_page {
-    border: 1px solid black;
-    width: 50%;
+    width: 80%;
     margin: auto;
+    max-width: 1200px;
+    background: black;
 }
+header {
+    background: white;
+}
+main {
+    display: flex column;
+}
+section {
+        height: 400px;
+        margin: 50px;
+        position: relative;
+        background-color: black;
+        color: white;
+        display: flex;
+        overflow: hidden;
+        border-bottom: 2px solid red;
+}
+/* Header */
 #titre_principal {
     display: flex;
-    border: 1px solid red;
 }
 nav {
     position: relative;
@@ -15,79 +33,209 @@ nav ul {
     display: flex;
     position: absolute;
     bottom: 0;
+    left: 300px;
 }
 .menu {
     padding: 20px;
     font-weight: bold;
     text-transform: uppercase;
 }
-section {
-        height: 150px;
-        margin: 50px;
-}
 
-
+/* Première section le meilleur film */
 #meilleur_film {
-    height: 300px;
-    border: 1px solid blue;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    height: 300px;
 }
-#meilleur_film_option {
-    border: 1px solid red;
+.meilleur_film_container {
+    display: flex;
+}
+.meilleur_film_body {
     flex-direction: column;
     padding: 50px;
-    justify-content: space-between;
+    width: 100%;
+}
+.meilleur_film_image {
+    display: flex;
+    weight: 100%;
+    width: 100%;
+}
+#titre_meilleur_film {
+    font-size: 24px;
 }
 
-
+/* Deuxième section les meilleurs films */
 #films_les_mieux_notés {
     text-align: center;
-    overflow: auto;
-    border: 1px solid green;
 }
 .mieux_notés {
-    border: 1px solid black;
     margin: 2px;
     display: flex;
 }
 
+/* Carousel */
+.title {
+  font-size: 25px;
+  color: #FFF;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.item {
+  margin: 40px 10px;
+  background-color: #fff;
+  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
+  transition: transform 0.3s;
+  transform: translate3d(0, -1px, 0);
+  height: 268px;
+  width: 182px;
+  display: flex;
+}
+
+.item:hover  {
+  transform: translate3d(0, -10px, 0);
+}
+
+.item img {
+  display: block;
+  width: 182px;
+  height: 268px;
+}
+
+.item__body {
+  padding: 25px;
+}
+
+.item__title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+}
+
+.items {
+  position: relative;
+}
 
 .carousel {
-    position: relative;
+  position: relative;
 }
-.carousel_container {
-    transition: transform 0.3s;
-    transform: translate3d(0, 0, 0);
+
+.carousel__container {
+  transition: transform 0.3s;
+  transform: translate3d(0, 0, 0);
 }
-.carousel_container::after {
-    content:'';
-    clear: both;
-    display: table;
+
+.carousel__container::after {
+  content: '';
+  clear: both;
+  display: table;
 }
-.carousel_item {
-    float: left;
+
+.carousel__item {
+  float: left;
 }
-.carousel_next, .carousel_prev {
-    width: 40px;
-    height, 40px;
-    background: #FFF url(right.png) center center no-repeat;
-    background-size: 20px 20px;
-    border-radius: 50%;
-    top: 50%;
-    margin-top: -20%;
-    right: -20px;
-    cursor: pointer;
-    transition: transform 0.3s, opacity 0.3s;
+
+.carousel__next, .carousel__prev {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #FFF url(right.png) center center no-repeat;
+  background-size:  20px 20px;
+  border-radius: 50%;
+  top: 50%;
+  margin-top: -20px;
+  right: -20px;
+  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
+  cursor: pointer;
+  transition: transform 0.3s, opacity 0.3s;
 }
-.carousel_next:hover, .carousel_prev:hover {
-    transform: scale(1.2)
+
+.carousel__next:hover, .carousel__prev:hover {
+  transform: scale(1.2)
 }
-.carousel_prev{
-    background-image: url(left.png);
-    right: auto;
-    left: -20px;
+
+.carousel__prev {
+  background-image: url(left.png);
+  right: auto;
+  left: -20px;
 }
-.carousel_next-hidden, .carousel_prev-hidden {
-    opacity: O;
+
+.carousel__next--hidden, .carousel__prev--hidden {
+  opacity: 0;
+}
+
+.carousel__pagination {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+
+.carousel__pagination__button {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 3px;
+  box-shadow: 0 2px 5px #3232321a;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.carousel__pagination__button--active, .carousel__pagination__button:hover {
+  transform: scale(1.4);
+}
+
+@media screen and (min-width: 800px) {
+  .carousel__pagination {
+    display: block;
+  }
+}
+
+/* Modal */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: black;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid red;
+  width: 80%; /* Could be more or less, depending on screen size */
+  color: white;
+}
+
+/* The Close Button */
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#myBtn {
+    background-color: black;
+    border: 1px solid black;
 }
