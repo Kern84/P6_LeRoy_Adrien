@@ -140,7 +140,7 @@ nav ul {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #FFF url(right.png) center center no-repeat;
+  background: #FFF url(images/right.png) center center no-repeat;
   background-size:  20px 20px;
   border-radius: 50%;
   top: 50%;
@@ -156,7 +156,7 @@ nav ul {
 }
 
 .carousel__prev {
-  background-image: url(left.png);
+  background-image: url(images/left.png);
   right: auto;
   left: -20px;
 }
