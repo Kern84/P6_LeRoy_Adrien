@@ -7,6 +7,7 @@
 }
 header {
     background: white;
+    border: 5px solid black;
 }
 main {
     display: flex column;
@@ -20,7 +21,9 @@ section {
         display: flex;
         overflow: hidden;
         border-bottom: 2px solid red;
+        text-align: center;
 }
+
 /* Header */
 #titre_principal {
     display: flex;
@@ -65,9 +68,6 @@ nav ul {
 }
 
 /* Deuxième section les meilleurs films */
-#films_les_mieux_notés {
-    text-align: center;
-}
 .mieux_notés {
     margin: 2px;
     display: flex;
@@ -231,7 +231,7 @@ nav ul {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: grey;
   text-decoration: none;
   cursor: pointer;
 }
