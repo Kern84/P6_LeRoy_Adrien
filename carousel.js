@@ -1,20 +1,11 @@
 class Carousel {
-  /**
-   * This callback type is called `requestCallback` and is displayed as a global symbol.
-   *
-   * @callback moveCallback
-   * @param {number} index
+
+  /*
+   slidesToScroll=1 Nombre d'éléments à faire défiler
+   slidesVisible=1 Nombre d'éléments visible
+   loop boucle du carousel
    */
 
-  /**
-   * @param {HTMLElement} element
-   * @param {Object} options
-   * @param {Object} [options.slidesToScroll=1] Nombre d'éléments à faire défiler
-   * @param {Object} [options.slidesVisible=1] Nombre d'éléments visible dans un slide
-   * @param {boolean} [options.loop=false] Doit-t-on boucler en fin de carousel
-   * @param {boolean} [options.pagination=false]
-   * @param {boolean} [options.navigation=true]
-   */
   constructor (element, options = {}) {
     this.element = element
     this.options = Object.assign({}, {
@@ -62,8 +53,8 @@ class Carousel {
     })
   }
 
-  /**
-   * Applique les bonnes dimensions aux éléments du carousel
+  /*
+   Applique les bonnes dimensions aux éléments du carousel
    */
   setStyle () {
     let ratio = this.items.length / this.slidesVisible
@@ -71,8 +62,8 @@ class Carousel {
     this.items.forEach(item => item.style.width = ((100 / this.slidesVisible) / ratio) + "%")
   }
 
-  /**
-   * Crée les flêches de navigation dans le DOM
+  /*
+   Crée les flêches de navigation dans le DOM
    */
   createNavigation () {
     let nextButton = this.createDivWithClass('carousel__next')
@@ -98,8 +89,8 @@ class Carousel {
     })
   }
 
-  /**
-   * Crée la pagination dans le DOM
+  /*
+   Crée la pagination dans le DOM
    */
   createPagination () {
     let pagination = this.createDivWithClass('carousel__pagination')
@@ -120,9 +111,6 @@ class Carousel {
     })
   }
 
-  /**
-   *
-   */
   next () {
     this.gotoItem(this.currentItem + this.slidesToScroll)
   }
@@ -131,9 +119,8 @@ class Carousel {
     this.gotoItem(this.currentItem - this.slidesToScroll)
   }
 
-  /**
-   * Déplace le carousel vers l'élément ciblé
-   * @param {number} index
+  /*
+   Déplace le carousel vers l'élément ciblé
    */
   gotoItem (index) {
     if (index < 0) {
@@ -155,16 +142,15 @@ class Carousel {
     this.moveCallbacks.forEach(cb => cb(index))
   }
 
-  /**
-   * Rajoute un écouteur qui écoute le déplacement du carousel
-   * @param {moveCallback} cb
+  /*
+   * Ecoute le déplacement du carousel
    */
   onMove (cb) {
     this.moveCallbacks.push(cb)
   }
 
-  /**
-   * Ecouteur pour le redimensionnement de la fenêtre
+  /*
+   Redimensionnement de la fenêtre
    */
   onWindowResize () {
     let mobile = window.innerWidth < 800
@@ -175,10 +161,8 @@ class Carousel {
     }
   }
 
-  /**
-   * Helper pour créer une div avec une classe
-   * @param {string} className
-   * @returns {HTMLElement}
+  /*
+   Créer une div avec une classe
    */
   createDivWithClass (className) {
     let div = document.createElement('div')
@@ -186,22 +170,17 @@ class Carousel {
     return div
   }
 
-  /**
-   * @returns {number}
-   */
   get slidesToScroll () {
     return this.isMobile ? 1 : this.options.slidesToScroll
   }
 
-  /**
-   * @returns {number}
-   */
   get slidesVisible () {
     return this.isMobile ? 1 : this.options.slidesVisible
   }
 
 }
 
+/* Mettre pagination: true  pour avoir ... sous le carousel et naviguer */
 let onReady = function () {
 
   new Carousel(document.querySelector('#carousel1'), {

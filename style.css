@@ -145,7 +145,7 @@ nav ul {
   border-radius: 50%;
   top: 50%;
   margin-top: -20px;
-  right: -20px;
+  right: 0px;
   box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
   cursor: pointer;
   transition: transform 0.3s, opacity 0.3s;
@@ -158,7 +158,7 @@ nav ul {
 .carousel__prev {
   background-image: url(images/left.png);
   right: auto;
-  left: -20px;
+  left: 0px;
 }
 
 .carousel__next--hidden, .carousel__prev--hidden {
@@ -197,7 +197,8 @@ nav ul {
 }
 
 /* Modal */
-/* The Modal (background) */
+
+/* Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -213,15 +214,17 @@ nav ul {
 
 /* Modal Content/Box */
 .modal-content {
+  position: relative;
   background-color: black;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid red;
   width: 80%; /* Could be more or less, depending on screen size */
   color: white;
+  text-align: justify;
 }
 
-/* The Close Button */
+/* le bouton close (fermé) */
 .close {
   color: red;
   float: right;
@@ -235,7 +238,8 @@ nav ul {
   text-decoration: none;
   cursor: pointer;
 }
-#myBtn {
+
+.myBtn {
     background-color: black;
     border: 1px solid black;
 }
